@@ -32,8 +32,7 @@ geocoder.addressSearch(locaF, function(result, status) {
      if (status === kakao.maps.services.Status.OK) {
 
         var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-		locationA = result[0].y
-		locationB = result[0].x
+		
         // 결과값으로 받은 위치를 마커로 표시합니다
         var marker = new kakao.maps.Marker({
             map: map,
@@ -66,7 +65,10 @@ function locationing(temp){
      if (status === kakao.maps.services.Status.OK) {
 
         var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
+		
+		locationA = result[0].y
+		locationB = result[0].x
+		
         // 결과값으로 받은 위치를 마커로 표시합니다
         var marker = new kakao.maps.Marker({
             map: map,
@@ -81,19 +83,20 @@ function locationing(temp){
 
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(coords);
+		
+		alert(locationA);
     } 
     });
 }
 </script>
 	<br><br>
 	<div align = "center">
-		<script>alert(locationA);</script>
-		<span>위도:</span><br>
-		<span>경도:</span>
+		<span style="font-size:25px;">위도:</span><br>
+		<span style="font-size:25px;">경도:</span>
 	</div>
 	<br>
     <div align = "center">
-        <input type = "text" style="height: 50px; width: 600px; font-size: 38px;" id="locationName" placeholder="경상북도 김천시 혁신6로 17">&nbsp;&nbsp;<input type="button" style="height:55px; width:80px; font-size:35px;" value="찾기" onclick="locationing(document.getElementById('locationName').value)">     
+        <input type = "text" style="height: 50px; width: 600px; font-size: 38px; position:relative; top:1px;" id="locationName" placeholder="경상북도 김천시 혁신6로 17">&nbsp;&nbsp;<input type="button" style="height:55px; width:80px; font-size:35px;" value="찾기" onclick="locationing(document.getElementById('locationName').value)">     
     </div>
 </body>
 </html>
