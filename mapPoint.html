@@ -85,14 +85,17 @@ function locationing(temp){
         map.setCenter(coords);
 		
 		alert(locationA);
+		
+		document.getElementById('Location1').value=locationA;
+		document.getElementById('Location2').value=locationB;
     } 
     });
 }
 </script>
 	<br><br>
 	<div align = "center">
-		<span style="font-size:25px;">위도:</span><br>
-		<span style="font-size:25px;">경도:</span>
+		<span style="font-size:25px;">위도:</span>&nbsp;&nbsp;<span style="font-size:25px;" id="Location1">33.450701</span><br>
+		<span style="font-size:25px;">경도:</span>&nbsp;&nbsp;<span style="font-size:25px;" id="Location2">126.570667</span>
 	</div>
 	<br>
     <div align = "center">
