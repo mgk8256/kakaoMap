@@ -53,7 +53,15 @@ geocoder.addressSearch(locaF, function(result, status) {
 		
 		document.getElementById('Location1').innerHTML=locationA;
 		document.getElementById('Location2').innerHTML=locationB;
-    } 
+    }else{
+	
+		document.getElementById('map').style.display = 'none';
+		document.getElementById('Location1').innerHTML='';
+		document.getElementById('Location2').innerHTML='';
+		
+		alert('올바른 주소를 입력해 주시기 바랍니다.');
+	
+	}
 });
 function locationing(temp){    
     var locaF = temp;    
