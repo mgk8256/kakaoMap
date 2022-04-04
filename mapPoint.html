@@ -28,10 +28,6 @@ var geocoder = new kakao.maps.services.Geocoder();
 // 주소로 좌표를 검색합니다
 geocoder.addressSearch(locaF, function(result, status) {
 
-	if(locaF == '')
-	{
-		locaF = '경상북도 김천시 혁신6로 17';
-	}
     // 정상적으로 검색이 완료됐으면 
      if (status === kakao.maps.services.Status.OK) {
 
@@ -62,6 +58,11 @@ geocoder.addressSearch(locaF, function(result, status) {
 function locationing(temp){    
     var locaF = temp;    
     
+	if(locaF == '')
+	{
+		locaF = '경상북도 김천시 혁신6로 17';
+	}
+	
     // 지도를 생성합니다    
     var map = new kakao.maps.Map(mapContainer, mapOption); 
 
