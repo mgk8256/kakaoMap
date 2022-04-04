@@ -17,7 +17,8 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     };  
 
 var locaF = '경상북도 김천시 혁신6로 17';    
-    
+var locationA;
+var locationB;  
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
 
@@ -31,7 +32,8 @@ geocoder.addressSearch(locaF, function(result, status) {
      if (status === kakao.maps.services.Status.OK) {
 
         var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
+		locationA = result[0].y
+		locationB = result[0].x
         // 결과값으로 받은 위치를 마커로 표시합니다
         var marker = new kakao.maps.Marker({
             map: map,
@@ -85,7 +87,9 @@ function locationing(temp){
 </script>
 	<br><br>
 	<div align = "center">
-		<script>alert(coords);</script>
+		<script>alert(locationA);</script>
+		<span>위도:</span><br>
+		<span>경도:</span>
 	</div>
 	<br>
     <div align = "center">
