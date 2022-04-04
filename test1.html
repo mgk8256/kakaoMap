@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+	<div align="center">
+		<h1>Hellow World!</h1>
+	</div>
+	<div align="center">
+		<div id="kakaoMap" style="height:500px; width:700px;">
+		</div>
+	</div>
+		<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=79dfbf23ae00bc810154c8eba9aa58dc&libraries=services"></script>
+		<script type="text/javascript">
+			var container = document.getElementById('kakaoMap');
+			var options = {
+				center: new kakao.maps.LatLng(37.5547278494914, 126.969526329341),
+				level: 1
+			};
+	
+			var map = new kakao.maps.Map(container, options);
+			
+			var moveLatLon = new daum.maps.LatLng(37.5547278494914, 126.969526329341);
+			var marker = new daum.maps.Marker({map : map , position : moveLatLon});
+		</script>
+  </body>
+</html>
